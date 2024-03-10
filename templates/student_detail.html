@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  form {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+
+
+</head>
+<body>
+{% block content %}
+  <h1>{{ student.name }}</h1>
+  <h3>Roll Number: {{ student.roll_number }}</h3>
+
+  <h2>Marks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for mark in student.mark_set.all %}
+        <tr>
+          <td>{{ mark.subject }}</td>
+          <td>{{ mark.marks }}</td>
+          <td><a href="{% url 'mark-edit' pk=mark.pk %}">Edit</a></td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="3">No marks found for this student.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <form action="{% url 'mark-create' %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="student" value="{{ student.pk }}">
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" required>
+    <label for="marks">Marks:</label>
+    <input type="number" name="marks" required>
+    <button type="submit">Add Marks</button>
+  </form>
+{% endblock %}
+</body>
+</html>

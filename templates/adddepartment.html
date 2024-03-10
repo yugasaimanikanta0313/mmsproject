@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+</head>
+<body>
+
+<!--<h3 align="center">Django with Form Handling, MVT, Template Inheritance, Session, Cookies, Email, ModelForms</h3>
+<hr color="black"><hr color="black">
+<br>
+
+<a href="{% url 'index' %}">Home</a>&nbsp;&nbsp;
+<a href="{% url 'formdemo' %}">Form Handling</a>&nbsp;&nbsp;
+<a href="{% url 'logindemo' %}">Login Demo</a>&nbsp;&nbsp;
+<a href="{% url 'addemployee' %}">Add Employee</a>&nbsp;&nbsp;
+<a href="{% url 'registration' %}">Registration</a>&nbsp;&nbsp;
+<a href="{% url 'userlogin' %}">User Login</a>&nbsp;
+<a href="{% url 'viewusers' %}">View Users</a>
+<a href="{% url 'adddepartment' %}">Add Department</a>&nbsp; -->
+
+
+<br><br>
+
+<h3 align="center"><u>Add Department</u></h3>
+
+
+<h3 align="center"><mark>{{msg}}</mark></h3>
+
+<form method="post">
+{% csrf_token %}
+<table align="center">
+
+    {% for field in deptform %}
+
+    <tr>
+        <td>{{field.label}}</td>
+        <td>{{field}}</td>
+    </tr>
+
+    {% endfor %}
+
+        <tr align="center">
+        <td colspan="2"><input type="submit" value="Add"></td>
+    </tr>
+
+</table>
+
+</form>
+
+
+</body>
+</html>

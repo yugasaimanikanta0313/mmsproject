@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{% block content %}
+  <h1>Mark List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>Subject</th>
+        <th>Mark</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for mark in marks %}
+        <tr>
+          <td>{{ mark.student.name }}</td>
+          <td>{{ mark.subject.name }}</td>
+          <td>{{ mark.mark }}</td>
+          <td>
+            <a href="{% url 'mark_update' mark.pk %}">Edit</a>
+            <a href="{% url 'mark_delete' mark.pk %}">Delete</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">No marks found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="">Add Mark</a>
+{% endblock %}
+
+</body>
+</html>

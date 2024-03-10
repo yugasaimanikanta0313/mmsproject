@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+  <h1>Delete Mark</h1>
+  <p>Are you sure you want to delete the mark for {{ mark.subject }}?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+    <a href="{% url 'student-detail' pk=mark.student.pk %}">No, cancel</a>
+  </form>
+{% endblock %}
+
+</body>
+</html>

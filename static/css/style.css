@@ -1,0 +1,23 @@
+/* Navbar */
+.navbar {
+  background-color: #333; /* set background color */
+  color: #fff; /* set text color */
+  padding: 10px; /* add some padding */
+}
+
+.navbar-brand {
+  font-size: 24px; /* increase font size */
+  font-weight: bold; /* make it bold */
+  text-transform: uppercase; /* capitalize text */
+  letter-spacing: 2px; /* add some letter spacing */
+  margin-right: 50px; /* add some right margin */
+}
+
+.navbar-nav {
+  margin-left: auto; /* align links to the right */
+}
+
+.nav-link {
+  color: #fff; /* set link color */
+  margin-right: 20px; /* add some right margin */
+}

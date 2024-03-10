@@ -1,0 +1,169 @@
+{% include 'adminnavbar.html' %}
+
+<!--<!DOCTYPE html>-->
+
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+ body {
+            background-color: white;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .imageColumn {
+            width: 25%;
+            padding: 10px;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        .card {
+            margin: 10px;
+            width: 18rem;
+        }
+
+        .card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+
+        .card-title {
+            margin-right: 10px;
+        }
+
+        .circle {
+            background: {{ card.color }};
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .imageColumn {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .imageColumn {
+                width: 100%;
+            }
+        }</style>
+<body>
+<div class="alignRow">
+
+<div class="imageColumn">
+ <div class="card" style="width: 18rem; margin: 10px">
+    <img src="{% static 'images/student.jpg' %}" class="card-img-top" >
+    <div class="card-body">
+      <div style="display: flex; flex-direction: row">
+        <h5 class="card-title" align="center">Student</h5>
+        {#  Colored cirlce:#}
+        <div style="
+          background: {{ card.color }};
+          width: 20px;
+          height: 20px;
+          margin-left: 10px;
+          border-radius: 50%;
+        "></div>
+      </div>
+      <p class="card-text">{{ card.description }}</p>
+      <a href="{% url 'registration' %}" class="btn btn-primary">click here</a>
+
+    </div>
+  </div>
+
+</div>
+<div class="imageColumn">
+ <div class="card" style="width: 18rem; margin: 10px">
+    <img src="{% static 'images/faculty.jpg' %}" class="card-img-top" >
+    <div class="card-body">
+      <div style="display: flex; flex-direction: row">
+        <h5 class="card-title">Faculty</h5>
+        {#  Colored cirlce:#}
+        <div style="
+          background: {{ card.color }};
+          width: 20px;
+          height: 20px;
+          margin-left: 10px;
+          border-radius: 50%;
+        "></div>
+      </div>
+      <p class="card-text">{{ card.description }}</p>
+      <a href="{% url 'facultyregistration' %}" class="btn btn-primary">click here</a>
+    </div>
+  </div>
+
+</div>
+
+<!--<div class="imageColumn">
+   <div class="card" style="width: 18rem; margin: 10px">
+    <img src="{% static '' %}" class="card-img-top" >
+    <div class="card-body">
+      <div style="display: flex; flex-direction: row">
+        <h5 class="card-title">Admin</h5>
+        <div style="
+          background: {{ card.color }};
+          width: 20px;
+          height: 20px;
+          margin-left: 10px;
+          border-radius: 50%;
+        "></div>
+      </div>
+      <p class="card-text">{{ card.description }}</p>
+      <a href="" class="btn btn-primary">click here</a>
+    </div>
+  </div> -->
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+{% include 'footer.html' %}

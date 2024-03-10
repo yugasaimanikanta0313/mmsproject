@@ -1,0 +1,72 @@
+
+{% include 'adminnavbar.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+
+    <style>
+table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #428bca;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+	</style>
+
+
+</head>
+<body>
+
+<br>
+
+<h2 align="center"><u>View Courses</u></h2>
+
+  <br>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Course Title</th>
+            <th>Course Code</th>
+            <th>Credits</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{user.course_id}}</td>
+            <td>{{user.course_title}}</td>
+            <td>{{user.course_code}}</td>
+            <td>{{user.course_credits}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+</body>
+</html>
+
+
+{% include 'footer.html' %}

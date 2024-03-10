@@ -1,0 +1,128 @@
+
+
+<!DOCTYPE html>
+<html>
+{% include 'usernavbar.html' %}
+
+<head>
+    <title>Student Profile</title>
+    <style>
+    .card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 20px;
+        }
+        .profile-pic {
+            height: 150px;
+            width: 150px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-left: 20px;
+        }
+        .profile-pic img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .details {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            font-size: 18px;
+            margin-left: 20px;
+        }
+        .results {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+ /* set background color and font weight for table headers */
+th {
+  background-color: #0077B5;
+  color: white;
+  font-weight: bold;
+}
+
+/* set background color for even rows */
+tr:nth-child(even) {
+  background-color: #F2F2F2;
+}
+
+/* set background color for odd rows */
+tr:nth-child(odd) {
+  background-color: #EDEDED;
+}
+
+/* add hover effect on rows */
+tr:hover {
+  background-color: #B7E0F2;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div class="profile-pic">
+                <img src="{{student.studentimage.url}}">
+            </div>
+            <div class="details">
+                <p><b>{{student.fullname}}</b></p>
+                <p>Department:  {{student.department}}</p>
+                <p>Email: {{student.email}}</p>
+                <p>Contact: {{student.contact}}</p>
+                <!--p><i>Location: {{student.location}}</i></p-->
+            </div>
+        </div>
+    </div>
+
+    <div class="results">
+        <h3>Results</h3>
+        <table>
+            <tr style="font-weight:bold">
+                <th>Course title</th>
+                <th>Marks Obtained</th>
+            </tr>
+            {% for mark in marks %}
+            <tr>
+                <td>{{ mark.subject.course_title }}</td>
+                <td>{{ mark.marks_obtained }}</td>
+            </tr>
+            {% endfor %}
+            <tr style="font-weight:bold">
+                <td>Total</td>
+                <td>{{ total_marks }}</td>
+            </tr>
+        </table>
+    </div>
+
+<br>
+<br>
+<br>
+</body>
+</html>

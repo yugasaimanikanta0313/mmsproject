@@ -1,0 +1,53 @@
+{% load static %}
+{% include 'empnavbar.html' %}
+{% block content %}
+  <h1 align="center">Leaderboard</h1>
+  <br><br>
+  <table class="my-table">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Student</th>
+        <th>Total Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in top_students %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ student.student__username }}</td>
+          <td>{{ student.total_marks }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block styles %}
+  <style>
+    table.my-table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: auto;
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: blue;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+  </style>
+{% endblock %}

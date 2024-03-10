@@ -1,0 +1,15 @@
+
+
+{% block content %}
+    <div id="chart"></div>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        var data = [{
+            x: {{ labels|safe }},
+            y: {{ marks|safe }},
+            type: 'bar'
+        }];
+        Plotly.newPlot('chart', data);
+    </script>
+{% endblock %}

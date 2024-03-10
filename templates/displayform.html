@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+</head>
+<body>
+
+<h3 align="center">Django with Form Handling, MVT, Template Inheritance, Session, Cookies, Email, ModelForms</h3>
+<hr color="black"><hr color="black">
+<br>
+
+<a href="{% url 'index' %}">Home</a>&nbsp;&nbsp;
+<a href="{% url 'formdemo' %}">Form Handling</a>&nbsp;&nbsp;
+<a href="{% url 'logindemo' %}">Login Demo</a>&nbsp;&nbsp;
+<a href="{% url 'addemployee' %}">Add Employee</a>&nbsp;&nbsp;
+<a href="{% url 'registration' %}">Registration</a>&nbsp;&nbsp;
+<a href="{% url 'userlogin' %}">User Login</a>&nbsp;
+<a href="{% url 'viewusers' %}">View Users</a>&nbsp;
+<a href="{% url 'adddepartment' %}">Add Department</a>
+
+<br><br>
+
+<b>ID</b>{{id}}<br>
+<b>Name</b>{{name}}<br>
+<b>Gender</b>{{gender}}<br>
+<b>Date of Birth</b>{{dateofbirth}}<br>
+<b>Department</b>{{department}}<br>
+<b>Email Address</b>{{emailid}}<br>
+<b>Mobile No</b>{{contactno}}<br>
+
+
+</body>
+</html>

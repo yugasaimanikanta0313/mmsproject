@@ -1,0 +1,155 @@
+<html lang="en">
+
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+
+    <title>Django</title>
+
+     <style>
+        form {
+			background-color:lightblue;
+			align: right;
+			padding: 5px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			width: 200px;
+			text-align: center;
+		}
+
+body{
+
+background-image: url("{% static 'images/sample.jpg' %}");
+	background-repeat: no-repeat;
+	background-size: contain;
+
+}
+
+.search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+
+
+.uname {
+  width: 300px;
+  border: 15px solid green;
+  padding: 25px;
+  margin: 20px;
+  align: right;
+}
+
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+<!--<h3 align="center">Django with Form Handling, MVT, Template Inheritance, Session, Cookies, Email, ModelForms</h3>
+<hr color="black"><hr color="black">
+<br>
+
+<a href="{% url 'userhome' %}">Home</a>&nbsp;&nbsp;
+<a href="{% url 'userlogout' %}">Logout</a>&nbsp;&nbsp;-->
+
+
+<header>
+        <nav class="navbar navbar-expand-lg navbar-red bg-dark" >
+  <a class="navbar-brand" href="{% url 'userhome' %}">MMS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+     <!-- <li class="nav-item active">
+        <a class="nav-link" href="{% url 'formdemo' %}">form demo <span class="sr-only">(current)</span></a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'userlogout' %}">Logout</a>
+      </li>
+      <!--<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="{% url 'registration' %}"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Register
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'registration' %}">Student</a>
+          <a class="dropdown-item" href="{% url 'registration' %}">Faculty</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'registration' %}">Guest</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Contact us</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>-->
+
+
+</nav>
+
+
+    </header>
+
+
+
+<br><br>
+
+<h3 align="right">Hi {{uname}}</h3>
+
+<div class="uname" align="right">
+    <h3 >Hi {{uname}}</h3>
+</div>
+
+<h2>I am in User Home</h2>
+
+
+</body>
+</html>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% include 'footer.html' %}

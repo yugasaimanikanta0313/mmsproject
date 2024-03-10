@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Navbar */
+    .navbar-red {
+  background-color: #007bff;
+}
+
+    .navbar-red .navbar-brand {
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .navbar-red .nav-item {
+      margin-right: 15px;
+    }
+
+    .navbar-red .nav-link {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .navbar-red .nav-link:hover {
+      color: #F8F8FF;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 align=center>Learning Management system</h1>
+
+  <br>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-red bg-dark">
+      <a class="navbar-brand" href="{% url 'index' %}">LMS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logininterface' %}">Register</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'viewusers' %}">View students</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'viewfaculty' %}">View Faculty</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'viewcourse' %}">View courses</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'studentcourse' %}">Add course</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'leaderboard' %}">leader board</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'piechart' %}">Analysis</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'adminlogin' %}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <br><br><br>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

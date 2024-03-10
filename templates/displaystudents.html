@@ -1,0 +1,111 @@
+
+{% load static %}
+<html>
+<head>
+
+    <title>
+        {% block 'title' %}
+       Students list
+        {% endblock %}
+    </title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<style>
+
+ {% block 'style' %}
+
+* {
+   box-sizing: border-box;
+}
+.imageColumn {
+   float: left;
+   width: 25%;
+   padding: 10px;
+}
+
+        .navbar{
+            background-color: black;
+            border-radius: 30px;
+
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none;
+            margin: 13px 20px;
+
+        }
+        .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+        }
+        .navbar li a:hover{
+            color: red
+        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+
+        {% endblock %}
+
+    </style>
+
+
+
+</head>
+<body>
+
+
+{% block 'body' %}
+
+
+<h2 align="center"><u>View All Students</u></h2>
+
+<br>
+
+<table align="center" border="2">
+    <tr style="font-weight:bold">
+        <td>ID</td>
+        <td>Cateogry</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>Image</td>
+    </tr>
+
+    {% for student in studentlist %}
+    <tr>
+        <td>{{student.id}}</td>
+        <td>{{student.fullname}}</td>
+         <td>{{student.gender}}</td>
+         <td>{{student.dateofbirth}}</td>
+         <td>{{stduent.email}}</td>
+         <td>
+           <!--  <img src="{{product.image.url}}" width="25%" height="25%"> -->
+         </td>
+
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}
+
+
+
+</body>
+</html>

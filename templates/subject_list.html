@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+  <h1>Subject List</h1>
+  <ul>
+    {% for subject in subjects %}
+      <li>{{ subject.name }}</li>
+    {% empty %}
+      <li>No subjects found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% include 'adminnavbar.html' %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: white;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .imageColumn {
+            width: 25%;
+            padding: 10px;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        .card {
+            margin: 10px;
+            width: 18rem;
+        }
+
+        .card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+
+        .card-title {
+            margin-right: 10px;
+        }
+
+        .circle {
+            background: {{ card.color }};
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .imageColumn {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .imageColumn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="alignRow">
+        <div class="imageColumn">
+            <div class="card">
+                <img src="{% static 'images/student.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <h5 class="card-title">Register Student</h5>
+                        <div class="circle"></div>
+                    </div>
+                    <p class="card-text">{{ card.description }}</p>
+                    <a href="{% url 'registration' %}" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+        <div class="imageColumn">
+            <div class="card">
+                <img src="{% static 'images/faculty.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <h5 class="card-title">Register Faculty</h5>
+                        <div class="circle"></div>
+                    </div>
+                    <p class="card-text">{{ card.description }}</p>
+                    <a href="{% url 'facultyregistration' %}" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="imageColumn">
+            <div class="card">
+                <img src="{% static 'images/viewstudents.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <h5 class="card-title">View Students</h5>
+                        <div class="circle"></div>
+                    </div>
+                    <p class="card-text">{{ card.description }}</p>
+                    <a href="{% url 'viewusers' %}" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="imageColumn">
+            <div class="card">
+                <img src="{% static 'images/viewfaculty1.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <h5 class="card-title">View Faculty</h5>
+                        <div class="circle"></div>
+                    </div>
+                    <p class="card-text">{{ card.description }}</p>
+                    <a href="{% url 'viewfaculty' %}" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="imageColumn">
+            <div class="card">
+                <img src="{% static 'images/course.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <h5 class="card-title">View course</h5>
+                        <div class="circle"></div>
+                    </div>
+                    <p class="card-text">{{ card.description }}</p>
+                    <a href="{% url 'viewcourse' %}" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="imageColumn">
+            <div class="card">
+                <img src="{% static 'images/course.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <h5 class="card-title">Add Course</h5>
+                        <div class="circle"></div>
+                    </div>
+                    <p class="card-text">{{ card.description }}</p>
+                    <a href="{% url 'studentcourse' %}" class="btn btn-primary">Add Course</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="imageColumn">
+            <div class="card">
+                <img src="{% static 'images/top.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <h5 class="card-title">Top 10 Students</h5>
+                        <div class="circle"></div>
+                    </div>
+                    <p class="card-text">{{ card.description }}</p>
+                    <a href="{% url 'leaderboard' %}" class="btn btn-primary">View Top 10</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>

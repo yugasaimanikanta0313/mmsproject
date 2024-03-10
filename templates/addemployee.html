@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+</head>
+<body>
+
+<h3 align="center">Django with Form Handling, MVT, Template Inheritance, Session, Cookies, Email, ModelForms</h3>
+<hr color="black"><hr color="black">
+<br>
+
+<a href="{% url 'index' %}">Home</a>&nbsp;&nbsp;
+<a href="{% url 'formdemo' %}">Form Handling</a>&nbsp;&nbsp;
+<a href="{% url 'logindemo' %}">Login Demo</a>&nbsp;&nbsp;
+<a href="{% url 'addemployee' %}">Add Employee</a>&nbsp;&nbsp;
+<a href="{% url 'registration' %}">Registration</a>&nbsp;&nbsp;
+<a href="{% url 'userlogin' %}">User Login</a>&nbsp;
+<a href="{% url 'viewusers' %}">View Users</a>&nbsp;
+<a href="{% url 'adddepartment' %}">Add Department</a>
+
+<br><br>
+
+<h3 align="center"><u>Add Employee</u></h3><br>
+
+<form method="post" action="{% url 'saveemployee' %}">
+    {% csrf_token %}
+<table align=center>
+
+<tr>
+<td><label>ID</label></td>
+<td>
+<input type="number" name="id" required="required"></input>
+</td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><label>Name</label></td>
+<td>
+<input type="text" name="name" required="required"></input>
+</td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><label>Gender</label></td>
+<td>
+<input type="radio" name="gender" value="Male" required="required"/>Male
+<input type="radio" name="gender" value="Female" required="required"/>Female
+</td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><label>Date of Birth</label></td>
+<td><input type="date" name="dateofbirth" required="required" placeholder="DD/MM/YYYY"/></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><label>Department</label></td>
+<td>
+<select name="department" required="required">
+<option value="">---Select---</option>
+<option value="Sales">Sales</option>
+<option value="Marketing">Marketing</option>
+<option value="Technical">Technical</option>
+<option value="Others">Others</option>
+</select>
+</td>
+</tr>
+
+<tr><td></td></tr>
+
+
+<tr>
+<td><label>Email ID</label></td>
+<td><input type="email" name="emailid" required="required"/></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><label>Contact No</label></td>
+<td><input type="number" name="contactno" maxlength="10" pattern="[6-9]{1}[0-9]{9}" required="required"/></td>
+</tr>
+
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+<tr align=center>
+<td colspan=2><input type="submit" value="Submit" class="button"></td>
+</tr>
+
+</table>
+
+</form>
+
+
+
+</body>
+</html>

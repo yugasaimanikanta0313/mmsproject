@@ -1,0 +1,171 @@
+
+
+{% include 'usernavbar.html' %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+
+    <title>Django</title>
+
+     <style>
+       .card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .card img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+<br><br>
+
+{% block 'body' %}
+
+<!-- Student information section -->
+<div class="card">
+    <img src="{{student.studentimage.url}}"  style="width: 35mm; height: 45mm; object-fit: cover; align=center" />
+    <p><b>{{student.fullname}}</b></p>
+    <p>{{student.department}}</p>
+    <p>Email: {{student.email}}</p>
+    <p>Contact: {{student.contact}}</p>
+    <p><i>Location: {{student.location}}</i></p>
+</div>
+
+<!-- Course list section
+<br>
+<table align="center" border="2">
+    <tr style="font-weight:bold">
+        <td>ID</td>
+        <td>Course title</td>
+        <td>Course code</td>
+        <td>Course credits</td>
+    </tr>
+    {% for course in courses %}
+    <tr>
+        <td>{{course.course_id}}</td>
+        <td>{{course.course_title}}</td>
+        <td>{{course.course_code}}</td>
+        <td>{{course.course_credits}}</td>
+    </tr>
+    {% endfor %}
+</table> -->
+
+<!-- Marks obtained section
+<br>
+<h3>Marks Obtained</h3>
+<table align="center" border="2">
+    <tr style="font-weight:bold">
+        <td>Course title</td>
+        <td>Marks Obtained</td>
+    </tr>
+    {% for mark in marks %}
+    <tr>
+        <td>{{mark.subject.course_title}}</td>
+        <td>{{mark.marks_obtained}}</td>
+    </tr>
+    {% endfor %}
+</table> -->
+
+{% endblock %}
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% include 'footer.html' %}

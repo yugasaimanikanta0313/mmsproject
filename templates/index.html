@@ -1,0 +1,175 @@
+
+
+
+
+<h1 align=center><b>
+    Learning Management system</b></h1>
+  <br>
+  <br>
+  <br>
+
+
+
+<html>
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+
+    <style>
+/* Default styles for all screen sizes */
+body {
+    background-image: url("{% static 'images/sample.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+/* Styles for screen sizes smaller than 768px */
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Styles for screen sizes between 768px and 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Styles for screen sizes larger than 992px */
+@media (min-width: 992px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+
+    .card {
+        width: 80%; /* set a default width */
+        max-width: 400px; /* limit the maximum width */
+        margin: auto;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .card img {
+        width: 60%;
+        border-radius: 5px;
+        margin: 0 auto 20px auto;
+        max-width: 100%;
+    }
+
+    .card h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .card button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    @media screen and (min-width: 480px) {
+        /* apply these styles for screens wider than 480px */
+        .card {
+            width: 40%;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        /* apply these styles for screens wider than 768px */
+        .card {
+            width: 30%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* apply these styles for screens narrower than 480px */
+        .card {
+            width: 100%;
+            padding: 10px;
+        }
+        .card img {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        /* apply these styles for screens narrower than 767px */
+        .card button {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        /* apply these styles for screens between 768px and 991px */
+        .card {
+            width: 50%;
+        }
+    }
+
+    @media (min-width: 992px) {
+        /* apply these styles for screens wider than 992px */
+        .card {
+            width: 30%;
+        }
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    .card button {
+        background-color:
+        }
+
+</style>
+
+</head>
+<body>
+
+<div class="card">
+  <img src="{% static 'images/admin.png' %}" alt="Sample image">
+  <div class="card-body">
+    <h2>Click here to login</h2>
+    <a href="{% url 'loginpage' %}"><button>LOGIN</button></a>
+  </div>
+</div>
+
+
+
+<br><br>
+
+</body>
+</html>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+{% include 'footer.html' %}

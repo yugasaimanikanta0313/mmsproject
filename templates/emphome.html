@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+{% include 'empnavbar.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+
+<head>
+
+
+<style>
+
+.card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+body {
+            background-color: white;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .imageColumn {
+            width: 25%;
+            padding: 10px;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        .card {
+            margin: 10px;
+            width: 18rem;
+        }
+
+        .card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+
+        .card-title {
+            margin-right: 10px;
+        }
+
+        .circle {
+            background: {{ card.color }};
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .imageColumn {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .imageColumn {
+                width: 100%;
+            }
+        }
+
+
+    </style>
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+   <center> <h1>Welcome {{ emp.fullname }}!</h1>
+ </center>
+
+
+
+
+<div class="alignRow">
+        <div class="imageColumn">
+            <div class="card">
+                <img src="{% static 'images/viewstudents.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <h5 class="card-title">View Students</h5>
+                        <div class="circle"></div>
+                    </div>
+                    <p class="card-text">{{ card.description }}</p>
+                    <a href="{% url 'empusers' %}" class="btn btn-primary">View   </a>
+                </div>
+            </div>
+        </div>
+        <div class="imageColumn">
+            <div class="card">
+                <img src="{% static 'images/Marks.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <h5 class="card-title"> Add Marks</h5>
+                        <div class="circle"></div>
+                    </div>
+                    <p class="card-text">{{ card.description }}</p>
+                    <a href="{% url 'list' %}" class="btn btn-primary">Add Marks</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="imageColumn">
+            <div class="card">
+                <img src="{% static 'images/top.jpg' %}" class="card-img-top">
+                <div class="card-body">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <h5 class="card-title">Top 10 Students</h5>
+                        <div class="circle"></div>
+                    </div>
+                    <p class="card-text">{{ card.description }}</p>
+                    <a href="{% url 'empleaderboard' %}" class="btn btn-primary">View Top 10</a>
+                </div>
+            </div>
+        </div>
+
+</div>
+</body>
+</html>
+

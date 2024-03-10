@@ -1,0 +1,110 @@
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+
+    <style>
+		table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #428bca;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+	</style>
+
+
+
+</head>
+
+{% include 'empnavbar.html' %}
+
+<body>
+
+<h2 align="center"><u>View Registered Student</u></h2>
+
+Total Registered Users = {{count}}
+<br>
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Location</th>
+            <th>Contact</th>
+            <th>Registration Time</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{user.id}}</td>
+           <td><img src="{{user.studentimage.url}}" style="width: 35mm; height: 45mm; object-fit: cover;" align="center"></td>
+
+            <td>{{user.fullname}}</td>
+            <td>{{user.department}}</td>
+            <td>{{user.dateofbirth}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.location}}</td>
+            <td>{{user.contact}}</td>
+            <td>{{user.registrationtime}}</td>
+            <td><a href="/deleteuser/{{user.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+</body>
+</html>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+<!--{% include 'footer.html' %} -->

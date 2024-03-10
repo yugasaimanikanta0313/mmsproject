@@ -1,0 +1,46 @@
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+</head>
+<body>
+
+
+<br>
+
+<h2 align="center"><u>View Registered Users</u></h2>
+
+Total Registered Users = {{count}}  <br>
+
+<table align="center" border="2">
+    <tr style="font-weight:bold">
+       <!-- <td>ID</td>
+        <td>Full Name</td>
+        <td>Gender</td>
+        <td>Date of Birth</td>
+        <td>EMAIL ID</td>
+        <td>Username</td>
+        <td>Loction</td>
+        <td>Contact No</td>
+        <td>Registration Time</td>
+        <td>Action</td>
+    </tr> -->
+
+    {% for user in users %}
+    <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.fullname}}</td>
+        <td>{{user.course_title}}</td>
+        <td>{{user.fk2.course_code}}</td>
+
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
